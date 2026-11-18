@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.next/
+out/
+*.tsbuildinfo
+.env
+.env.local
+database/*.sqlite-wal
+database/*.sqlite-shm
+.DS_Store

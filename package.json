@@ -1,0 +1,21 @@
+{
+  "name": "the-learning-loft",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Learning Loft — education center website (Next.js frontend, NestJS API, SQLite database)",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "setup": "npm run install:all && node scripts/setup-env.js",
+    "dev": "concurrently -k -n api,web -c blue,yellow \"npm run start:dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "start": "concurrently -k -n api,web -c blue,yellow \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
+    "db:reset": "npm run db:reset --prefix backend",
+    "typecheck": "npm run typecheck --prefix backend && npm run typecheck --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}
